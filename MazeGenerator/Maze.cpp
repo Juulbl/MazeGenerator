@@ -33,6 +33,9 @@ Maze::Maze(sf::Vector2f position, sf::Vector2f size, int wallWidth, sf::Vector2i
 
 Maze::~Maze()
 {
+    for(int y = 0; y < this->cells.size(); y++)
+        for(int x = 0; x < this->cells[y].size(); x++)
+            delete this->cells[y][x];
 }
 
 void Maze::Draw(sf::RenderWindow *window)
